@@ -2,7 +2,7 @@ import {pool} from "../db.js";
 
 export const getcarrito = async (req, res) => {
     try {
-        const [rows] = await pool.query('SELECT title, author, category, detail, amount, sale_price FROM inventario')
+        const [rows] = await pool.query('SELECT id, title, author, category, detail, amount, sale_price FROM inventario')
         res.json(rows)
     } catch (error) {
         return res.status(500).json({message: 'Error de conexión'})
@@ -13,7 +13,7 @@ export const getcarrito = async (req, res) => {
 
 export const getcarrito_ind = async (req, res) => {
   try{
-      const [rows] = await pool.query('SELECT title, author, category, detail, amount, sale_price FROM inventario WHERE id = ?', [req.params.id])
+      const [rows] = await pool.query('SELECT id, title, author, category, detail, amount, sale_price FROM inventario WHERE id = ?', [req.params.id])
       if (rows.length <= 0 ) return res.status(404).json({
           message:'Not found'
       })
@@ -33,7 +33,7 @@ export const updatecarrito = async (req, res) => {
     if(result.affectedRows === 0) return res.status(404).json({
         message:'Not found'})
 
-    const [rows] = await pool.query('SELECT title, author, category, detail, amount, sale_price FROM inventario WHERE id=?', [id])
+    const [rows] = await pool.query('SELECT id, title, author, category, detail, amount, sale_price FROM inventario WHERE id=?', [id])
     res.json(rows[0])
 }catch (error) {
     return res.status(500).json({message: 'Error de conexión'})

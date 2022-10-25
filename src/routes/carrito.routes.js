@@ -1,5 +1,5 @@
 import {Router} from "express";
-import {getcarrito, getcarrito_ind, updatecarrito,} from "../controllers/inventario.controller.js";
+import {getcarrito, getcarrito_ind, updatecarrito,} from "../controllers/carrito.controller.js";
 
 
 const router = Router()
