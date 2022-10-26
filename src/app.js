@@ -5,7 +5,6 @@ import inventarioRoutes from "./routes/inventario.routes.js";
 const app = express()
 
 app.use(express.json())
-
 app.use(inventarioRoutes)
 app.use(indexRoutes)
 
