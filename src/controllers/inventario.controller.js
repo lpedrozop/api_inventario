@@ -21,6 +21,7 @@ export const getInventario_ind = async (req, res) => {
       return res.status(500).json({message: 'Error de conexión'})
   }
 }
+
 export const createInventario = async (req, res) => {
 
 try{
