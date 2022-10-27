@@ -1,10 +1,17 @@
 import {createPool} from 'mysql2/promise'
+import {
+    DB_HOST,
+    DB_PORT,
+    DB_DATABASE,
+    DB_USER,
+    DB_PASSWORD,
+
+} from "./config.js";
 
 export const pool = createPool({
-    host: 'us-cdbr-east-06.cleardb.net',
-    user: 'b82cc5a3579ef9',
-    password: 'a8609492',
-    port: 3306,
-    database: 'heroku_66629adcf6a3cf0'
-
+    host: DB_HOST,
+    user: DB_USER,
+    password: DB_PASSWORD,
+    port: DB_PORT,
+    database: DB_DATABASE
 })
