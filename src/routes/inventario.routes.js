@@ -6,7 +6,7 @@ const router = Router()
 router.get('/inventory', getInventario)
 router.get('/inventory/:id', getInventario_ind)
 router.post('/inventory', createInventario)
-router.patch('/inventory/:id', updateInventario)
-router.delete('/inventory/:id', deleteInventario)
+router.patch('/inventory', updateInventario)
+router.delete('/inventory', deleteInventario)
 
 export default router
