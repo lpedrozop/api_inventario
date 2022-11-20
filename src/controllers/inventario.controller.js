@@ -23,10 +23,10 @@ export const getInventario_ind = async (req, res) => {
 }
 export const createInventario = async (req, res) => {
     try{
-        const {id,title,author,category,detail,amount,purchase_price,sale_price} = req.body
-        const [rows] = await pool.query('INSERT INTO inventario (id,title,author,category,detail,amount,purchase_price,sale_price) VALUES (?,?,?,?,?,?,?,?)', [id,title,author,category,detail,amount,purchase_price,sale_price])
+        const {id,title,author,category,detail,amount,purchase_price,sale_price, url_i} = req.body
+        const [rows] = await pool.query('INSERT INTO inventario (id,title,author,category,detail,amount,purchase_price,sale_price, url_i) VALUES (?,?,?,?,?,?,?,?,?)', [id,title,author,category,detail,amount,purchase_price,sale_price, url_i])
         res.send({
-        id,title,author,category,detail,amount,purchase_price,sale_price
+        id,title,author,category,detail,amount,purchase_price,sale_price, url_i
         })
     } catch (error) {
         return res.status(500).json({message: 'Error de conexión'})
